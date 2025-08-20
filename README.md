@@ -49,15 +49,17 @@ Modern, secure, and elegant server control panel, open source alternative to Ope
 
 
 ## :dart: Features
-:green_circle: Provide a beautiful, powerful, and easy-to-use web management UI
+:green_circle: Provide a beautiful, powerful, and easy-to-use web management UI.
 
-:purple_circle: Free SSL support both for HTTP-01 and DNS-01 challenge or provide your own SSL certificates
+:purple_circle: Free SSL support both for HTTP-01 and DNS-01 challenge or provide your own SSL certificates.
 
 :yellow_circle: Powerful security features, such as access control, denial-of-service attack protection, identity authentication.
 
-:red_circle: Simplify host management, include UI frendly terminal and file manager for users
+:red_circle: Simplify host management, include UI frendly terminal and file manager for users.
 
-:large_blue_circle: Support application store, greatly reducing the difficulty of website building and container management
+:large_blue_circle: Support application store, greatly reducing the difficulty of website building and container management.
+
+:orange_circle: Supports multi-node management, significantly alleviating the management workload for multiple servers.
 
 
 

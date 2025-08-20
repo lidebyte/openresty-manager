@@ -27,7 +27,7 @@
 
 ---
 
-现代化、安全、美观的主机管理面板，OpenResty Edge 的开源替代品，它可以让您轻松地安全反向代理在家或互联网上运行的网站，包括访问控制、拒绝服务攻击防护、自动申请并续期免费的SSL证书，而无需对OpenResty或Let's Encrypt了解太多。并支持主机管理功能，包括易于使用的Web终端和文件管理以及基于docker compose的应用商店功能，大大降低建站和容器管理的难度。
+现代化、安全、美观的主机管理面板，OpenResty Edge 的开源替代品，它可以让您轻松地安全反向代理在家或互联网上运行的网站，包括访问控制、拒绝服务攻击防护、SSO身份认证、自动申请并续期免费的SSL证书，而无需对OpenResty或Let's Encrypt了解太多。并支持主机管理功能，包括易于使用的Web终端和文件管理以及基于docker compose的应用商店功能，大大降低建站和容器管理的难度。同时支持多台服务器管理和数据同步，大大减轻多台服务器的管理压力。
 
 <h3 align="center">
   <img src="https://github.com/Safe3/openresty-manager/blob/main/docs/cn/openresty-manager.png" alt="Dashboard" width="700px">
@@ -53,6 +53,8 @@
 :red_circle: 简化服务器管理，为用户界面友好的终端和文件管理功能
 
 :large_blue_circle: 支持基于容器的应用商店功能，大大降低建站和容器管理的难度
+
+:orange_circle: 支持多节点管理，大大减轻多台服务器的管理压力
 
 
 
