@@ -215,6 +215,12 @@ install_docker() {
                     yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
                 fi
                 ;;
+            anolis)
+                yum -y erase podman buildah
+                yum -y install yum-utils device-mapper-persistent-data lvm2
+                yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+                yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+                ;;
             tlinux)
                 local v4=$(normalize_version "4")
                 if [ "$NEW_OS_VERSION" -ge "$v4" ]; then
