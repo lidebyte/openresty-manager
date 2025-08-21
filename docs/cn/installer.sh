@@ -70,7 +70,7 @@ install_dependencies() {
             apt-get update
             apt-get -y install --no-install-recommends wget gnupg ca-certificates libmaxminddb0 curl tar logrotate
             ;;
-        centos|rocky|oracle|rhel|amazon|alinux|tlinux|mariner)
+        centos|rocky|oracle|rhel|amazon|anolis|alinux|tlinux|mariner)
             yum install -y yum-utils wget libmaxminddb curl tar logrotate
             ;;
         fedora)
@@ -137,7 +137,7 @@ add_repository() {
             fi
             apt-get update
             ;;
-        centos|rhel|alinux|tlinux|rocky|mariner)
+        centos|rhel|alinux|anolis|tlinux|rocky|mariner)
             local v2=$(normalize_version "9")
             if [ "$NEW_OS_VERSION" -ge "$v2" ]; then
                 wget -O /etc/yum.repos.d/openresty.repo "https://openresty.org/package/${OS_NAME}/openresty2.repo"
@@ -179,7 +179,7 @@ install_openresty() {
         debian|ubuntu)
             apt-get install -y openresty
             ;;
-        centos|rhel|amazon|alinux|tlinux|rocky|oracle|mariner)
+        centos|rhel|amazon|anolis|alinux|tlinux|rocky|oracle|mariner)
             yum install -y openresty
             ;;
         fedora)
@@ -244,7 +244,7 @@ install_openresty_manager() {
     else
         curl https://download.uusec.com/om_arm64.tgz -o /tmp/om.tgz
     fi
-
+    export OM_LANGUAGE=zh
     mkdir -p /opt && tar -zxf /tmp/om.tgz -C /opt/ && /opt/om/oms -s install && /opt/om/oms -s start
     if [ $? -ne "0" ]; then
         abort "OpenResty Manager安装失败"
