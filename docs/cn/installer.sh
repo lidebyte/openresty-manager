@@ -244,6 +244,22 @@ install_docker() {
     fi
 }
 
+optimize_network() {
+    sysctl -w net.ipv4.tcp_mem="3097431 4129911 6194862" > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_rmem="4096 87380 6291456" > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_wmem="4096 65536 4194304" > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_max_tw_buckets=262144 > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_tw_recycle=0 > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_tw_reuse=1 > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_syncookies=1 > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_fin_timeout=15 > /dev/null 2>&1
+    sysctl -w net.ipv4.ip_local_port_range="1024 65535" > /dev/null 2>&1
+    sysctl -w net.ipv4.tcp_max_syn_backlog=65535 > /dev/null 2>&1
+    sysctl -w net.core.somaxconn=65535 > /dev/null 2>&1
+    sysctl -w net.core.netdev_max_backlog=200000 > /dev/null 2>&1
+    sysctl -p > /dev/null 2>&1
+}
+
 install_openresty_manager() {
     if [ "$OS_ARCH" = "x86_64" ]; then                
         curl https://download.uusec.com/om.tgz -o /tmp/om.tgz
@@ -291,6 +307,7 @@ main() {
 
     if [ ! -e "/opt/om" ]; then
         warning "安装OpenResty Manager..."
+        optimize_network
         install_openresty_manager
     else
         abort '目录 "/opt/om" 已存在, 请确认删除后再试'

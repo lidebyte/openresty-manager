@@ -1,6 +1,6 @@
 ﻿services:
   openresty-manager:
-    image: swr.cn-south-1.myhuaweicloud.com/uusec/openresty-manager:latest
+    image: uusec/openresty-manager:latest
     environment:
       #- NGINX_RESOLVER=resolver 127.0.0.11 valid=30s ipv6=off local=on;
       - OM_LANGUAGE=zh
