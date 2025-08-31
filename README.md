@@ -133,6 +133,8 @@ If you have an idea or some kind of improvement, you are welcome to contribute a
 </a>
 </p>
 
+<a href="https://auraplusplus.com/projects/openresty-manager" target="_blank" rel="noopener"> <img src="https://auraplusplus.com/images/badges/featured-on-light.svg" alt="Featured on Aura++" /> </a>
+
 
 ## :kissing_heart: Contact
 
