@@ -44,17 +44,19 @@
 
 ## :dart: 特色
 
-:purple_circle: 支持通过HTTP-01和DNS-01挑战申请免费SSL证书并自动续期
+:green_circle: 最简单的通过Web界面即可轻松管理OpenResty的产品
 
-:yellow_circle: 无需了解OpenResty，即可轻松为您的网站创建反向代理
+:purple_circle: 支持访问控制、HTTP Flood、身份认证等多种安全防护能力
 
-:orange_circle: 提供了多种强大安全功能，如访问控制、拒绝服务攻击防护、身份认证等
+:yellow_circle: 支持多种免费证书申请协议和自动续期托管
 
-:red_circle: 简化服务器管理，为用户界面友好的终端和文件管理功能
+:red_circle: 支持主机管理，包括基于Web界面的命令终端和文件管理
 
-:large_blue_circle: 支持基于容器的应用商店功能，大大降低建站和容器管理的难度
+:large_blue_circle: 支持应用商店和容器管理，让建站从未如此简单
 
-:orange_circle: 支持多节点管理，大大减轻多台服务器的管理压力
+:orange_circle: 支持多节点管理功能，可批量管理多台服务器
+
+:brown_circle: 支持 CDN 缓存加速功能，可打造 CDN 集群
 
 
 

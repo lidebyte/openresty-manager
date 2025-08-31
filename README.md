@@ -61,6 +61,8 @@ Modern, secure, and elegant server control panel, open source alternative to Ope
 
 :orange_circle: Supports multi-node management, significantly alleviating the management workload for multiple servers.
 
+:brown_circle: Includes CDN caching acceleration to create CDN clusters
+
 
 
 ## :rocket: Usage
@@ -132,8 +134,6 @@ If you have an idea or some kind of improvement, you are welcome to contribute a
   <img src="https://contrib.rocks/image?repo=Safe3/openresty-manager&max=500">
 </a>
 </p>
-
-<a href="https://auraplusplus.com/projects/openresty-manager" target="_blank" rel="noopener"> <img src="https://auraplusplus.com/images/badges/featured-on-light.svg" alt="Featured on Aura++" /> </a>
 
 
 ## :kissing_heart: Contact
