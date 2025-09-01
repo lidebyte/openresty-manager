@@ -266,7 +266,7 @@ install_openresty_manager() {
     else
         curl https://download.uusec.com/om_arm64.tgz -o /tmp/om.tgz
     fi
-    export OM_LANGUAGE=zh
+    export OM_LANGUAGE="zh"
     mkdir -p /opt && tar -zxf /tmp/om.tgz -C /opt/ && /opt/om/oms -s install && /opt/om/oms -s start
     if [ $? -ne "0" ]; then
         abort "OpenResty Manager安装失败"
