@@ -49,19 +49,19 @@ Modern, secure, and elegant server control panel, open source alternative to Ope
 
 
 ## :dart: Features
-:green_circle: Provide a beautiful, powerful, and easy-to-use web management UI.
+:green_circle: ‌The simplest OpenResty management product accessible via web interface.
 
-:purple_circle: Free SSL support both for HTTP-01 and DNS-01 challenge or provide your own SSL certificates.
+:purple_circle: Supports comprehensive security capabilities including access control, HTTP Flood protection, and identity authentication.
 
-:yellow_circle: Powerful security features, such as access control, denial-of-service attack protection, identity authentication.
+:yellow_circle: Enables multiple free certificate application protocols with automatic renewal hosting.
 
-:red_circle: Simplify host management, include UI frendly terminal and file manager for users.
+:red_circle: Features host management with web-based command terminal and file management.
 
-:large_blue_circle: Support application store, greatly reducing the difficulty of website building and container management.
+:large_blue_circle: Includes app marketplace and container management, making website construction simpler than ever before.
 
-:orange_circle: Supports multi-node management, significantly alleviating the management workload for multiple servers.
+:orange_circle: Offers multi-node management for batch administration of multiple servers.
 
-:brown_circle: Includes CDN caching acceleration to create CDN clusters
+:brown_circle: Delivers distributed CDN caching acceleration for building CDN clusters.
 
 
 

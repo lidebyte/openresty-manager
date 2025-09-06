@@ -56,7 +56,7 @@
 
 :orange_circle: 支持多节点管理功能，可批量管理多台服务器
 
-:brown_circle: 支持 CDN 缓存加速功能，可打造 CDN 集群
+:brown_circle: 支持分布式 CDN 缓存加速功能，可打造 CDN 集群
 
 
 
