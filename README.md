@@ -134,7 +134,13 @@ If you have an idea or some kind of improvement, you are welcome to contribute a
   <img src="https://contrib.rocks/image?repo=Safe3/openresty-manager&max=500">
 </a>
 </p>
-
+<a href="https://auraplusplus.com/projects/openresty-manager" target="_blank" title="Aura++ Top 1 Daily Winner">
+  <img 
+    src="https://auraplusplus.com/images/badges/top1-light.svg" 
+    alt="Aura++ Top 1 Daily Winner" 
+    style="width: 195px; height: auto;" 
+  />
+</a>
 
 ## :kissing_heart: Contact
 
