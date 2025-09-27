@@ -40,6 +40,10 @@ else
     abort "Unable to detect operating system"
 fi
 
+if [ "$OS_NAME" = "tencentos" ]; then                
+    OS_NAME="tlinux"
+fi
+
 normalize_version() {
     local version=$1
     version=$(echo "$version" | tr -d '[:alpha:]_-' | sed 's/\.\+/./g')
