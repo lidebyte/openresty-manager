@@ -70,7 +70,7 @@ install_dependencies() {
             apt-get update
             apt-get -y install --no-install-recommends wget gnupg ca-certificates libmaxminddb0 curl tar logrotate
             ;;
-        centos|rocky|oracle|rhel|amazon|anolis|alinux|tlinux|mariner)
+        centos|rocky|oracle|rhel|amazon|anolis|alinux|tlinux|tencentos|mariner)
             yum install -y yum-utils wget libmaxminddb curl tar logrotate
             ;;
         fedora)
@@ -137,7 +137,7 @@ add_repository() {
             fi
             apt-get update
             ;;
-        centos|rhel|alinux|anolis|tlinux|rocky|mariner)
+        centos|rhel|alinux|anolis|tlinux|tencentos|rocky|mariner)
             local v2=$(normalize_version "9")
             if [ "$NEW_OS_VERSION" -ge "$v2" ]; then
                 wget -O /etc/yum.repos.d/openresty.repo "https://openresty.org/package/${OS_NAME}/openresty2.repo"
@@ -179,7 +179,7 @@ install_openresty() {
         debian|ubuntu)
             apt-get install -y openresty
             ;;
-        centos|rhel|amazon|anolis|alinux|tlinux|rocky|oracle|mariner)
+        centos|rhel|amazon|anolis|alinux|tlinux|tencentos|rocky|oracle|mariner)
             yum install -y openresty
             ;;
         fedora)
@@ -221,7 +221,7 @@ install_docker() {
                 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
                 yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
                 ;;
-            tlinux)
+            tlinux|tencentos)
                 local v4=$(normalize_version "4")
                 if [ "$NEW_OS_VERSION" -ge "$v4" ]; then
                     yum install docker -y
@@ -266,7 +266,7 @@ install_openresty_manager() {
     else
         curl https://download.uusec.com/om_arm64.tgz -o /tmp/om.tgz
     fi
-    export OM_LANGUAGE="zh"
+    export OM_LANGUAGE=zh
     mkdir -p /opt && tar -zxf /tmp/om.tgz -C /opt/ && /opt/om/oms -s install && /opt/om/oms -s start
     if [ $? -ne "0" ]; then
         abort "OpenResty Manager安装失败"
