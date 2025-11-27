@@ -72,7 +72,7 @@ OpenResty Manager不仅易于使用，而且易于安装，支持主机和容器
 
 &nbsp;&nbsp;<a href="https://www.dkdun.cn/aff/RXBQPEUU" target="_blank"><img height="36" src="https://raw.githubusercontent.com/Safe3/openresty-manager/refs/heads/main/docs/dkdun.png" alt="林枫云"></a>
 
-- ### 主机版
+- ### 主机版安装
 
 > :biohazard: ***如果服务器正在使用云服务，请记住开放OpenResty Manager所需的TCP端口80、443和34567***
 
@@ -82,9 +82,9 @@ OpenResty Manager不仅易于使用，而且易于安装，支持主机和容器
 sudo bash -c "$(curl -fsSL https://om.uusec.com/cn/installer.sh)"
 ```
 
+随后可以通过 systemctl 命令管理OpenResty Manager服务，包括启动、停止、重启等，如：systemctl stop oms。
 
-
-- ### 容器版
+- ### 容器版安装
 
 一键安装：自动安装可以在几分钟内完成。
 
@@ -107,8 +107,20 @@ sudo bash -c "$(curl -fsSL https://om.uusec.com/cn/docker_installer.sh)"
 
 
 
+- ### 高级进阶(多节点CDN)
 
-- ### 卸载
+1. DNS管理：通过本产品管理第三方DNS记录，添加一个根域名用于CDN的CNAME绑定，如：uusec.com。
+2. 节点分组：添加一个节点分组，开启域名解析并填写域名，如：cdn.uusec.com。
+3. 安装节点：在其它服务器上安装OpenResty Manager作为CDN节点
+4. 节点管理：在主节点服务器上添加第3步安装的CDN节点，并指定第2步创建的节点分组。
+5. 添加站点：进入站点菜单，点击“新建站点”按钮，按照提示添加反向代理的站点域名，如：www.uusec.com 。
+6. CDN绑定：进入DNS管理菜单，添加一条域名 www.uusec.com 的CNAME记录，值为cdn.uusec.com。
+7. 同步配置：进入节点管理菜单，同步第5步创建的站点到CDN子节点。
+8. 测试CDN：访问 www.uusec.com 域名即可访问到第3部安装的CDN子节点上。
+
+
+
+- ### 卸载软件
 
 一键卸载：自动卸载可以在几分钟内完成。
 

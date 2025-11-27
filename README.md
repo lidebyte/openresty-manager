@@ -69,7 +69,7 @@ Modern, secure, and elegant server control panel, open source alternative to Ope
 
 OpenResty Manager is not only easy to use but also easy to install, supports both host and container environments.
 
-- ### Host Version
+- ### Host Version Install
 
 > :biohazard: ***If the server is using cloud services, remember to open the TCP port 80, 443 and 34567 required for OpenResty Manager***
 
@@ -83,7 +83,9 @@ One click installation: Automatic installation can be completed in minutes.
 sudo bash -c "$(curl -fsSL https://om.uusec.com/installer.sh)"
 ```
 
-- ### Docker Version
+After that, you can manage the OpenResty Manager service using the systemctl command, including operations like starting, stopping, and restarting. For example: systemctl stop oms.
+
+- ### Docker Version Install
 
 One click installation: Automatic installation can be completed in minutes.
 
@@ -105,6 +107,17 @@ Subsequently, `bash /opt/om/om.sh` is used to manage the OpenResty Manager conta
 4. Add upstreams: Go to the upstream management menu and add upstream load balancing for installed applications such as WordPress.
 5. Add a site: Go to the sites menu, click the "New site" button, and follow the prompts to add the site domain names for reverse proxy.
 6. Test connectivity: Change your domain dns A or CNAME record to the OpenResty Manager server IP, visit your website to see if it can be opened.
+
+- ### Advanced Configuration (Multi-node CDN)
+
+1. DNS Manager: Manage third-party DNS records through this product, add a root domain for CDN CNAME binding (e.g., uusec.com).
+2. Node Groups: Create a node group, enable domain resolution, and specify the domain (e.g., cdn.uusec.com).
+3. Node Deployment: Install OpenResty Manager on other servers as CDN nodes.
+4. Node Manager: Add the CDN node (deployed in Step 3) to the primary node server, and assign the node group created in Step 2.
+5. Site Creation: In the Sites menu, click "New Site" and add a reverse-proxied site domain (e.g., www.uusec.com) as prompted.
+6. CDN Binding: In the DNS Manager menu, add a CNAME record for www.uusec.com with the value cdn.uusec.com.
+7. Configuration Sync: In the Node Manager menu, synchronize the site (created in Step 5) to CDN child nodes.
+8. CDN Testing: Access the domain www.uusec.com to verify traffic routing through the CDN node deployed in Step 3.
 
 - ### Uninstall
 
@@ -134,13 +147,7 @@ If you have an idea or some kind of improvement, you are welcome to contribute a
   <img src="https://contrib.rocks/image?repo=Safe3/openresty-manager&max=500">
 </a>
 </p>
-<a href="https://auraplusplus.com/projects/openresty-manager" target="_blank" title="Aura++ Top 1 Daily Winner">
-  <img 
-    src="https://auraplusplus.com/images/badges/top1-light.svg" 
-    alt="Aura++ Top 1 Daily Winner" 
-    style="width: 195px; height: auto;" 
-  />
-</a>
+
 
 ## :kissing_heart: Contact
 
