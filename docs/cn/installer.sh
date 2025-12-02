@@ -294,34 +294,44 @@ allow_firewall_ports() {
 main() {
     info "检测到系统：${OS_NAME} ${OS_VERSION} ${OS_ARCH}"
     
-    warning "安装依赖..."
+    warning "步骤 1/7: 安装系统依赖..."
     install_dependencies
-
-    warning "检查端口冲突 ..."
+    
+    warning "步骤 2/7: 检查端口冲突..."
     check_ports
 
     if [ ! $(command -v openresty) ]; then
-        warning "添加OpenResty仓库..."
+        warning "步骤 3/7: 添加 OpenResty 仓库..."
         add_repository
         
-        warning "安装OpenResty..."
+        warning "步骤 4/7: 安装 OpenResty..."
         install_openresty
+    else
+        info "步骤 3-4/7: OpenResty 已安装，跳过"
     fi
     
+    warning "步骤 5/7: 检查并安装 Docker..."
     install_docker
 
     if [ ! -e "/opt/om" ]; then
-        warning "安装OpenResty Manager..."
+        warning "步骤 6/7: 安装 OpenResty Manager..."
         optimize_network
         install_openresty_manager
     else
         abort '目录 "/opt/om" 已存在, 请确认删除后再试'
     fi
 
-    warning "添加防火墙端口例外..."
+    warning "步骤 7/7: 配置防火墙..."
     allow_firewall_ports
 
+    info ""
+    info "=========================================="
     info "恭喜你安装成功"
+    info "=========================================="
+    info "访问地址: https://YOUR_SERVER_IP:34567"
+    info "默认账号: admin"
+    info "默认密码: #Passw0rd"
+    info "=========================================="
 }
 
 main
